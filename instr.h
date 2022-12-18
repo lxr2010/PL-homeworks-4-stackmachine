@@ -1,23 +1,9 @@
-#define INSTR(name, opcode, size) 
-#include "instr.def"
-#undef INSTR
-
-
+#ifndef INSTR_H
+#define INSTR_H
 
 typedef int Int;
 
-class Instr {
-public:
-  Int opcode;
-  Int op1;
-  Int op2;
-  Int size;
-};
-
-#define INSTR(name, opcode, size) \
-  class name : public Instr {};
-#include "instr.def"
-#undef INSTR
+Int get_size(Int);
 
 
-
+#endif //INSTR_H 
