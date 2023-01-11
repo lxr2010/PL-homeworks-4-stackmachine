@@ -22,6 +22,9 @@ Operand vm::run(void)
       case Mul:
         push(pop() * pop());
         break;
+      case Leq:
+        push((pop() >= pop())?(Operand)1:(Operand)0);
+        break;
       case Var:
         assert(sp >= OP1);
         push(stack[sp-OP1]);
